@@ -1,9 +1,9 @@
 package com.ihrm.system.controller;
 
-import com.ihrm.common.controller.BaseController;
-import com.ihrm.common.entiy.PageResult;
-import com.ihrm.common.entiy.Result;
-import com.ihrm.common.entiy.ResultCode;
+import com.ihrm.common.controller.BaseControllers;
+import com.ihrm.common.entity.PageResult;
+import com.ihrm.common.entity.Result;
+import com.ihrm.common.entity.ResultCode;
 import com.ihrm.domain.system.Role;
 import com.ihrm.domain.system.response.RoleResult;
 import com.ihrm.system.service.RoleService;
@@ -17,7 +17,7 @@ import java.util.Map;
 @CrossOrigin
 @RestController
 @RequestMapping("/sys")
-public class RoleController extends BaseController{
+public class RoleController extends BaseControllers {
     
     @Autowired
     private RoleService roleService;

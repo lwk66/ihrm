@@ -1,6 +1,7 @@
 package com.ihrm.common.exception;
 
-import com.ihrm.common.entiy.ResultCode;
+import com.ihrm.common.entity.ResultCode;
+import com.sun.org.apache.bcel.internal.classfile.Code;
 import lombok.Getter;
 
 /**

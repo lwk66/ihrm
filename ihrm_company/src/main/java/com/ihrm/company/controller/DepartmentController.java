@@ -1,8 +1,8 @@
 package com.ihrm.company.controller;
 
-import com.ihrm.common.controller.BaseController;
-import com.ihrm.common.entiy.Result;
-import com.ihrm.common.entiy.ResultCode;
+import com.ihrm.common.controller.BaseControllers;
+import com.ihrm.common.entity.Result;
+import com.ihrm.common.entity.ResultCode;
 import com.ihrm.company.service.CompanyService;
 import com.ihrm.company.service.DepartmentService;
 import com.ihrm.domain.company.Company;
@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 //3.设置父路径
 @RequestMapping(value="/company")   //  company/deparment
-public class DepartmentController extends BaseController {
+public class DepartmentController extends BaseControllers {
 
     @Autowired
     private DepartmentService departmentService;
@@ -87,5 +87,10 @@ public class DepartmentController extends BaseController {
         return new Result(ResultCode.SUCCESS);
     }
 
+    @RequestMapping(value="/department/search",method = RequestMethod.POST)
+    public Department findByCode(@RequestParam(value="code") String code,@RequestParam(value="companyId") String companyId) {
+        Department dept = departmentService.findByCode(code,companyId);
+        return dept;
+    }
 
 }

@@ -1,7 +1,8 @@
 package com.ihrm.company.controller;
 
-import com.ihrm.common.entiy.Result;
-import com.ihrm.common.entiy.ResultCode;
+import com.ihrm.common.entity.Result;
+import com.ihrm.common.entity.ResultCode;
+import com.ihrm.common.exception.CommonException;
 import com.ihrm.company.service.CompanyService;
 import com.ihrm.domain.company.Company;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +50,8 @@ public class CompanyController {
 
     //根据id查询企业
     @RequestMapping(value="/{id}",method = RequestMethod.GET)
-    public Result findById(@PathVariable(value="id") String id) {
-//        throw new CommonException(ResultCode.UNAUTHORISE);
+    public Result findById(@PathVariable(value="id") String id) throws CommonException {
+        //throw new CommonException(ResultCode.UNAUTHORISE);
         Company company = companyService.findById(id);
         Result result = new Result(ResultCode.SUCCESS);
         result.setData(company);
@@ -60,7 +61,7 @@ public class CompanyController {
     //查询全部企业列表
     @RequestMapping(value="",method = RequestMethod.GET)
     public Result findAll() {
-//        int i = 1/0;
+        //int i = 1/0;
         List<Company> list = companyService.findAll();
         Result result = new Result(ResultCode.SUCCESS);
         result.setData(list);

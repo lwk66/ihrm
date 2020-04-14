@@ -1,5 +1,14 @@
-package com.ihrm.common.entiy;
+package com.ihrm.common.entity;
 
+/**
+ * 公共的返回码
+ *    返回码code：
+ *      成功：10000
+ *      失败：10001
+ *      未登录：10002
+ *      未授权：10003
+ *      抛出异常：99999
+ */
 public enum ResultCode {
 
     SUCCESS(true,10000,"操作成功！"),
@@ -11,7 +20,8 @@ public enum ResultCode {
 
     //---用户操作返回码  2xxxx----
     MOBILEORPASSWORDERROR(false,20001,"用户名或密码错误");
-    //---企业操作返回码----
+
+    //---企业操作返回码  3xxxx----
     //---权限操作返回码----
     //---其他操作返回码----
 

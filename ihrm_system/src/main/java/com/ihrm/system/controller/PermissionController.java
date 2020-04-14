@@ -1,7 +1,7 @@
 package com.ihrm.system.controller;
 
-import com.ihrm.common.entiy.Result;
-import com.ihrm.common.entiy.ResultCode;
+import com.ihrm.common.entity.Result;
+import com.ihrm.common.entity.ResultCode;
 import com.ihrm.domain.system.Permission;
 import com.ihrm.system.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
